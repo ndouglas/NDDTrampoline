@@ -18,3 +18,8 @@ Example:
       }];
     }
     @end
+
+    ....
+    
+    // Will send the message only if the object responds to the selector.
+    [delegate.try object:self didSendSomeOptionalDelegateMessage];
