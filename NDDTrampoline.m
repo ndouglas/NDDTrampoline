@@ -7,15 +7,15 @@
 //
 
 @implementation NDDTrampoline {
-  NSMethodSignature *(^selectorHandler)(SEL);
-  void (^invocationHandler)(NSInvocation *);
+	NSMethodSignature *(^selectorHandler)(SEL);
+	void (^invocationHandler)(NSInvocation *);
 }
 
 + (instancetype)trampolineWithSelectorHandler:(NSMethodSignature *(^)(SEL))selectorHandler
   invocationHandler:(void (^)(NSInvocation *))invocationHandler {
 	NDDTrampoline *result = [self alloc];
-  result->selectorHandler = [selectorHandler copy];
-  result->invocationHandler = [invocationHandler copy];
+	result->selectorHandler = [selectorHandler copy];
+	result->invocationHandler = [invocationHandler copy];
 	return result;
 }
 
